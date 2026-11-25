@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.1 (2026-11-25)
+- Fixed: tapping Constellation or Aurora could stop the animation with a "negative radius" error in some browsers
+
 ## 1.0.0 (2026-11-25)
 - First public release
 - 4 animated chat backgrounds: Aurora, Constellation, Bubbles and Ocean Waves

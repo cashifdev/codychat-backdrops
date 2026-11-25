@@ -70,7 +70,7 @@
 				x.fillStyle = gg; x.fillRect(s.ptr.x - 150, s.ptr.y - 150, 300, 300);
 			}
 			s.taps = s.taps.filter(function(k){
-				var age = (t - k.t) / 1200; if(age > 1){ return false; }
+				var age = Math.max(0, (t - k.t) / 1200); if(age > 1){ return false; }
 				var rr = 30 + age * 260, c = s.pal.c[k.i % s.pal.c.length];
 				var g2 = x.createRadialGradient(k.x, k.y, rr * 0.4, k.x, k.y, rr);
 				g2.addColorStop(0, rgba(c, 0)); g2.addColorStop(0.8, rgba(c, 0.35 * (1 - age))); g2.addColorStop(1, rgba(c, 0));
@@ -100,7 +100,7 @@
 			var d = s.dots, i, j, a, b;
 			/* shockwaves from taps push stars out */
 			s.taps = s.taps.filter(function(k){
-				var age = (t - k.t) / 900; if(age > 1){ return false; }
+				var age = Math.max(0, (t - k.t) / 900); if(age > 1){ return false; }
 				if(!k.hit){
 					k.hit = 1;
 					for(var q = 0; q < d.length; q++){
@@ -249,7 +249,7 @@
 					var g = (px - s.ptrX) / 140;
 					y -= s.swell * (20 + lift * 26) * Math.exp(-g * g) * (1 - i * 0.12);
 					for(var q = 0; q < s.taps.length; q++){
-						var tp = s.taps[q], age = (t - tp.t) / 1000, dist = Math.abs(px - tp.x) - age * 260;
+						var tp = s.taps[q], age = Math.max(0, (t - tp.t) / 1000), dist = Math.abs(px - tp.x) - age * 260;
 						if(Math.abs(dist) < 90){ y -= Math.cos(dist / 90 * Math.PI / 2) * 18 * (1 - age / 2.6) * Math.sin(dist / 18 + age * 6); }
 					}
 					x.lineTo(px, y);
