@@ -1,0 +1,54 @@
+/* Backdrops for Codychat 10.1 · by M Kashif (github.com/cashifdev) · chatnoregister.com · MIT */
+#bd-canvas{position:absolute;left:0;top:0;width:100%;height:100%;display:block;z-index:0;pointer-events:none}
+.bd-on #inside_wrap_chat{position:relative;z-index:1;height:100%}
+.bd-on #show_chat.back_chat,.bd-on #show_chat{background:transparent!important}
+/* when a member forces the other look than the chat theme, keep the text readable */
+.bd-flip.bd-light #show_chat .chat_system,.bd-flip.bd-light #show_chat .chat_system,.bd-flip.bd-light #show_chat .sysname,.bd-flip.bd-light #show_chat .username.user,.bd-flip.bd-light #show_chat .cdate,.bd-flip.bd-light #show_chat .chat_tmessage{color:#1e293b!important}
+.bd-flip.bd-dark #show_chat .chat_system,.bd-flip.bd-dark #show_chat .chat_system,.bd-flip.bd-dark #show_chat .sysname,.bd-flip.bd-dark #show_chat .username.user,.bd-flip.bd-dark #show_chat .cdate,.bd-flip.bd-dark #show_chat .chat_tmessage{color:#e2e8f0!important}
+.bd-flip.bd-light #show_chat .mbubble{background:rgba(255,255,255,.88)!important;color:#0f172a!important;box-shadow:0 1px 3px rgba(15,23,42,.12)}
+
+/* picker */
+#bd-wrap{position:fixed;inset:0;z-index:2147481000;background:rgba(15,23,42,0);display:flex;align-items:flex-end;justify-content:center;transition:background .2s}
+#bd-wrap.on{background:rgba(15,23,42,.45)}
+.bd-sheet{width:100%;max-width:520px;max-height:88vh;overflow-y:auto;box-sizing:border-box;padding:8px 16px calc(16px + env(safe-area-inset-bottom,0px));border-radius:24px 24px 0 0;background:#f8fafc;color:#0f172a;transform:translateY(100%);transition:transform .25s cubic-bezier(.2,.9,.3,1);font-family:inherit}
+#bd-wrap.on .bd-sheet{transform:none}
+.bd-grab{width:40px;height:5px;border-radius:3px;background:#c7d2fe;margin:4px auto 10px}
+.bd-head{display:flex;gap:8px;align-items:flex-start}
+.bd-head>div{flex:1}
+.bd-title{font-size:19px;font-weight:900}
+.bd-sub{font-size:13px;color:#475569;margin-top:2px;line-height:1.35}
+.bd-x{width:36px;height:36px;border:0;border-radius:12px;background:#e0e7ff;color:#0f172a;font-size:20px;cursor:pointer;flex:none}
+.bd-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#64748b;margin:14px 0 6px}
+.bd-chips{display:flex;gap:6px}
+.bd-chip{flex:1;border:2px solid #e2e8f0;background:#fff;color:#0f172a;border-radius:999px;padding:8px 6px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit}
+.bd-chip.bd-sel{border-color:#6366f1;background:#eef2ff}
+.bd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:14px}
+.bd-tile{display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:6px 6px 10px;border:2px solid #e2e8f0;border-radius:18px;background:#fff;color:#0f172a;cursor:pointer;text-align:left;transition:transform .12s,border-color .15s;font-family:inherit}
+.bd-tile:hover{border-color:#a5b4fc;transform:translateY(-2px)}
+.bd-tile.bd-sel{border-color:#6366f1;box-shadow:0 0 0 3px rgba(99,102,241,.2)}
+.bd-prev{position:relative;display:block;height:92px;border-radius:13px;overflow:hidden;background:#e2e8f0}
+.bd-prev canvas{display:block;width:100%;height:100%}
+.bd-off{position:absolute;inset:0;display:grid;place-items:center;font-weight:900;color:#64748b;font-size:15px}
+.bd-lk{position:absolute;inset:0;display:grid;place-items:center;background:rgba(15,23,42,.55);color:#fff;font-weight:800;font-size:12px;text-align:center;padding:6px}
+.bd-tile.bd-lock{cursor:not-allowed}
+.bd-tile.bd-lock .bd-n,.bd-tile.bd-lock .bd-d{opacity:.6}
+.bd-n{font-size:14px;font-weight:900;padding:2px 4px 0}
+.bd-d{font-size:11.5px;color:#64748b;line-height:1.3;padding:0 4px}
+.bd-save{display:block;width:100%;margin-top:14px;border:0;border-radius:14px;padding:13px;font-size:15px;font-weight:900;color:#fff;background:linear-gradient(90deg,#6366f1,#0ea5e9);cursor:pointer;font-family:inherit}
+.bd-save:disabled{opacity:.6}
+.bd-cr{margin-top:10px;text-align:center;font-size:11px;color:#94a3b8}
+.bd-cr a{color:inherit;text-decoration:underline}
+#bd-wrap.bd-sdark .bd-sheet{background:#0f172a;color:#e2e8f0}
+#bd-wrap.bd-sdark .bd-grab{background:#334155}
+#bd-wrap.bd-sdark .bd-sub,#bd-wrap.bd-sdark .bd-d{color:#94a3b8}
+#bd-wrap.bd-sdark .bd-label{color:#94a3b8}
+#bd-wrap.bd-sdark .bd-x{background:#1e293b;color:#e2e8f0}
+#bd-wrap.bd-sdark .bd-chip,#bd-wrap.bd-sdark .bd-tile{background:#1e293b;border-color:#334155;color:#e2e8f0}
+#bd-wrap.bd-sdark .bd-chip.bd-sel{border-color:#818cf8;background:#312e81}
+#bd-wrap.bd-sdark .bd-tile.bd-sel{border-color:#818cf8}
+#bd-wrap.bd-sdark .bd-prev{background:#334155}
+#bd-wrap.bd-sdark .bd-off{color:#94a3b8}
+#bd-wrap.bd-sdark .bd-cr{color:#64748b}
+@media(min-width:768px){#bd-wrap{align-items:center}.bd-sheet{border-radius:24px;transform:translateY(30px) scale(.97);padding-bottom:18px}#bd-wrap.on .bd-sheet{transform:none}}
+@media(max-width:420px){.bd-grid{grid-template-columns:1fr 1fr;gap:8px}.bd-prev{height:78px}.bd-d{display:none}}
+@media(prefers-reduced-motion:reduce){.bd-sheet,.bd-tile{transition:none}}
